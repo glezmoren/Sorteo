@@ -1,10 +1,14 @@
 @import '_reset';
+body{
+    
+}
 .header{
     width: 100%;
     padding: 2rem 0;
     &__wrapper{
         width: 80%;
         margin: auto;
+        
     }
     &__h1{
         font-size: 5em;
@@ -27,6 +31,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+        background-color: white;
     }
     &__input{
         width: 30%;
