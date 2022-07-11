@@ -27,33 +27,85 @@ nodoEntrada.addEventListener( 'keyup', function(info_evento){
         nodoEntrada.value = "";
     }
 
-//que al darle al sortear subraye en color uno de los nombres
+
 });
+
+//que al darle al sortear subraye en color uno de los nombres
+// let nodoBoton = document.querySelector('.sorteo__btn');
+
+// nodoBoton.addEventListener( 'click', function(){
+// console.log ('Clic en botón')
+
+//     let listaNombres = document.querySelectorAll( '.sorteo__nombre' );
+
+//     console.log( listaNombres ) 
+
+//     for( let i = 0 ; i < listaNombres.length ; i++){
+//     listaNombres[i].classList.remove('activo')
+//     };//para que cuando le de dos veces a sortear no me aparezcan el nombre ganador anterior y el de ahora subrayados, solo me aparezca el de ahora, estoy limpiando 
+
+//     let aleatorio_nombre = Math.trunc(Math.random () * listaNombres.length);//esto me da un numero aleatorio entre 0 y la longitud de la lista
+//     console.log( aleatorio_nombre );
+
+//     listaNombres[aleatorio_nombre].classList.add('activo')
+
+// })
+
+//AVANZADO 
 let nodoBoton = document.querySelector('.sorteo__btn');
 
 nodoBoton.addEventListener( 'click', function(){
-console.log ('Clic en botón')
+    console.log ('Clic en botón')
+    let n= 0;
+    let ref_interval;
+   
+      
+    ref_interval = setInterval( function(){
+        if(n < 20){
+            n =  n + 1
+            numeroAleatorio()
+        }else{
 
-let listaNombres = document.querySelectorAll( '.sorteo__nombre' );
-
-console.log( listaNombres ) 
-
-for( let i = 0 ; i < listaNombres.length ; i++){
-   listaNombres[i].classList.remove('activo')
-};//para que cuando le de dos veces a sortear no me aparezcan el nombre ganador anterior y el de ahora subrayados, solo me aparezca el de ahora, estoy limpiando 
-
-
-let aleatorio_nombre = Math.trunc(Math.random () * listaNombres.length);//esto me da un numero aleatorio entre 0 y la longitud de la lista
-console.log( aleatorio_nombre );
-
-// for( let i = 0 ; i < listaNombres.length ; i++){
-//     console.log ( i )
-//     let posicion = i;
-//     return posicion
-// }
-
-
-listaNombres[aleatorio_nombre].classList.add('activo')
-
+             clearInterval (ref_interval)
+        }
+    },100 );
+   
 })
+
+function numeroAleatorio(){
+    let listaNombres = document.querySelectorAll( '.sorteo__nombre' );
+
+    console.log( listaNombres ) 
+
+    for( let i = 0 ; i < listaNombres.length ; i++){
+    listaNombres[i].classList.remove('activo')
+    };
+
+    //AVANZADO:
+    //----------
+    // let n = 0;
+    // let ref_interval = setInterval( function(){
+        
+    //     if(n>=listaNombres.length){
+    //         n = 0;
+    //     }
+    //     console.log( 'Interval ejecutandose');
+    //     console.log( '--------------');
+    //     for( let i = 0 ; i < listaNombres.length ; i++){
+    //         listaNombres[i].classList.remove('activo')
+    //         };
+    //     listaNombres[n].classList.add('activo')
+    //     console.log(n)
+    //     n++;
+    // }, 1000 );
+
+    // clearInterval ( ref_interval );
+    //----------
+
+    let aleatorio_nombre = Math.trunc(Math.random () * listaNombres.length);//esto me da un numero aleatorio entre 0 y la longitud de la lista
+    console.log( aleatorio_nombre );
+
+    listaNombres[aleatorio_nombre].classList.add('activo')
+
+};
 
