@@ -159,6 +159,9 @@ body {
   font-size: 1.4em;
   margin: 0.6rem 0;
 }
+.sorteo__nombre.activo {
+  background-color: aqua;
+}
 .sorteo__btn {
   margin: 0 0 1rem 0;
   padding: 0.6rem 2rem;
